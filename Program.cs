@@ -27,22 +27,42 @@ int forigen = Convert.ToInt32(partes[0]);
 int corigen = Convert.ToInt32(partes[1]);
 int fdestino = Convert.ToInt32(partes[2]);
 int cdestino = Convert.ToInt32(partes[3]);
+int distanciaFila = Math.Abs(fdestino - forigen);
+int distanciaColumna = Math.Abs(cdestino - corigen);
 
 Console.WriteLine("movimiento registrado:" + partes[0] + partes[1]);
 Console.WriteLine("Destino:" + partes[2] + partes[3]);
 if (tipodeficha[forigen, corigen] == 'B')
+
 {
+    if (distanciaFila == 1 && distanciaColumna == 1)
+    {
+    Console.WriteLine("movimiento valido");
     Console.WriteLine("aqui hay una ficha blanca");
     char fichaamover = (tipodeficha[forigen, corigen]);
     tipodeficha[fdestino, cdestino] = fichaamover;
     tipodeficha[forigen, corigen] = '-';
+    }
+    else
+    {
+        Console.WriteLine("movimiento invalido");
+    }
+   
 }
 else if (tipodeficha[forigen, corigen] == 'N')
 {
-    Console.WriteLine("aqui hay una ficha negra");
+    if (distanciaFila == 1 && distanciaColumna == 1)
+    {
+     Console.WriteLine("movimiento valido");
     char fichaamover = (tipodeficha[forigen, corigen]);
     tipodeficha[fdestino, cdestino] = fichaamover;
     tipodeficha[forigen, corigen] = '-';
+    }
+    else
+    {
+        Console.WriteLine("movimiento invalido");
+    }
+    
 }
 else
 {
