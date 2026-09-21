@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 char[,] tipodeficha = {
                 {'-','B','-','B','-','B','-','B'},
                 {'B','-','B','-','B','-','B','-'},
@@ -59,6 +61,7 @@ if (tipodeficha[forigen, corigen] == turno)
 
 {
     if (distanciaFila == 1 && distanciaColumna == 1)
+    {
     if((turno == 'B' && fdestino > forigen) || (turno == 'N' && fdestino < forigen))
     {
     Console.WriteLine("movimiento valido");
@@ -75,6 +78,7 @@ if (tipodeficha[forigen, corigen] == turno)
     else
     {
         turno = 'B';
+    }
     }
     }
     else if (distanciaFila == 2 && distanciaColumna == 2)
@@ -170,6 +174,7 @@ for (int i = 0; i < 8; i++)
         Console.ResetColor();
     }
     Console.WriteLine();
+}
 }
 
 

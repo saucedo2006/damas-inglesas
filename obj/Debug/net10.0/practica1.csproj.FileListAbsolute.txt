@@ -12,3 +12,4 @@ C:\Users\sauas\Documents\Proyectos\practica1\obj\Debug\net10.0\refint\practica1.
 C:\Users\sauas\Documents\Proyectos\practica1\obj\Debug\net10.0\practica1.pdb
 C:\Users\sauas\Documents\Proyectos\practica1\obj\Debug\net10.0\practica1.genruntimeconfig.cache
 C:\Users\sauas\Documents\Proyectos\practica1\obj\Debug\net10.0\ref\practica1.dll
+C:\Users\sauas\Documents\Proyectos\practica1\obj\Debug\net10.0\practica1.sourcelink.json
