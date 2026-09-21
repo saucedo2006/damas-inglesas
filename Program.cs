@@ -19,6 +19,8 @@ for (int i = 0; i < 8; i++)
     }
     Console.WriteLine();
 }
+while (true)
+{
 Console.WriteLine("escribe la fila y columna de origen y destino: Ej: 2 1 1 2");
 string entrada = Console.ReadLine();
 
@@ -29,10 +31,12 @@ int fdestino = Convert.ToInt32(partes[2]);
 int cdestino = Convert.ToInt32(partes[3]);
 int distanciaFila = Math.Abs(fdestino - forigen);
 int distanciaColumna = Math.Abs(cdestino - corigen);
+char turno = 'B';
 
 Console.WriteLine("movimiento registrado:" + partes[0] + partes[1]);
 Console.WriteLine("Destino:" + partes[2] + partes[3]);
-if (tipodeficha[forigen, corigen] == 'B')
+if (tipodeficha[forigen, corigen] == turno)
+
 
 {
     if (distanciaFila == 1 && distanciaColumna == 1)
@@ -42,6 +46,14 @@ if (tipodeficha[forigen, corigen] == 'B')
     char fichaamover = (tipodeficha[forigen, corigen]);
     tipodeficha[fdestino, cdestino] = fichaamover;
     tipodeficha[forigen, corigen] = '-';
+    if (turno == 'B')
+    {
+        turno = 'N';
+    }
+    else
+    {
+        turno = 'B';
+    }
     }
     else
     {
@@ -49,25 +61,13 @@ if (tipodeficha[forigen, corigen] == 'B')
     }
    
 }
-else if (tipodeficha[forigen, corigen] == 'N')
-{
-    if (distanciaFila == 1 && distanciaColumna == 1)
-    {
-     Console.WriteLine("movimiento valido");
-    char fichaamover = (tipodeficha[forigen, corigen]);
-    tipodeficha[fdestino, cdestino] = fichaamover;
-    tipodeficha[forigen, corigen] = '-';
-    }
-    else
-    {
-        Console.WriteLine("movimiento invalido");
-    }
-    
-}
+
 else
 {
     Console.WriteLine("no hay ninguna ficha");
 }
+
+Console.Clear();
 Console.WriteLine("  0 1 2 3 4 5 6 7 ");
 for (int i = 0; i < 8; i++)
 {
@@ -77,8 +77,8 @@ for (int i = 0; i < 8; i++)
         Console.Write(tipodeficha[i, j] + " ");
     }
     Console.WriteLine();
+}
 };
-
 
 
 
