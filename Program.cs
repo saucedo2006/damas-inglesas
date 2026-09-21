@@ -37,6 +37,7 @@ for (int i = 0; i < 8; i++)
     Console.WriteLine();
 }
 char turno = 'B';
+List<string> Historial = new List<string>();
 while (true)
 {
 Console.WriteLine("escribe la fila y columna de origen y destino: Ej: 2 1 1 2");
@@ -65,6 +66,8 @@ if (tipodeficha[forigen, corigen] == turno)
     char fichaamover = (tipodeficha[forigen, corigen]);
     tipodeficha[fdestino, cdestino] = fichaamover;
     tipodeficha[forigen, corigen] = '-';
+    string jugada= "Turno: " + turno + " Movimiento: " + forigen + "," + corigen + " a " + fdestino + "," + cdestino;
+    Historial.Add(jugada);
     if (turno == 'B')
     {
         turno = 'N';
@@ -85,6 +88,9 @@ if (tipodeficha[forigen, corigen] == turno)
             tipodeficha[fdestino, cdestino] = fichaamover;
             tipodeficha[forigen, corigen] = '-';
             tipodeficha[filaMedia, columnaMedia] = '-';
+            string jugada= "Turno: " + turno + " Movimiento: " + forigen + "," + corigen + " a " + fdestino + "," + cdestino;
+            Historial.Add(jugada);
+            
             if (turno == 'B')
             {
                 turno = 'N';
@@ -109,6 +115,34 @@ if (tipodeficha[forigen, corigen] == turno)
 else
 {
     Console.WriteLine("no es tu turno");
+}
+int fichasB = 0;
+int fichasN = 0;
+
+for (int i = 0; i < 8; i++)
+{
+    for (int j = 0; j < 8; j++)
+    {
+        if (tipodeficha[i, j] == 'B')
+        {
+            fichasB++;
+        }
+        else if (tipodeficha[i, j] == 'N')
+        {
+            fichasN++;
+        }
+    }
+} if (fichasB == 0)
+{
+    Console.WriteLine("Fichas negras ganan");
+    File.WriteAllLines("historial.txt", Historial);
+    break;
+}
+else if (fichasN == 0)
+{
+    Console.WriteLine("Fichas azules ganan");
+    File.WriteAllLines("historial.txt", Historial);
+    break;
 }
 
 Console.Clear();
@@ -136,7 +170,7 @@ for (int i = 0; i < 8; i++)
         Console.ResetColor();
     }
     Console.WriteLine();
-};
+}
 
 
 
