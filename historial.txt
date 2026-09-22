@@ -1,0 +1,3 @@
+B movió de (2, 1) a (3, 0)
+N movió de (5, 2) a (4, 1)
+B comió ficha saltando a (5,2)
